@@ -4,7 +4,9 @@ export const SET_TOKEN = 'login/SET_TOKEN'
 
 export const LoginStore = {
     namespaced: true,
-    state: {},
+    state: {
+        token: ''
+    },
     actions: {
         signIn: async ({ commit }, payload) => {
             const res = await LoginServices.signIn(payload)
