@@ -1,0 +1,56 @@
+<template>
+    <v-container
+        class="fill-height"
+        >
+        <v-row 
+            align="center" 
+            justify="center"
+            >
+            <v-col cols="6">
+                <v-card
+                    raised
+                    >
+                    <v-toolbar
+                        dark
+                        flat
+                        color="primary"
+                        >
+                        <v-toolbar-title>
+                            Book Store
+                        </v-toolbar-title>
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-form>
+                            <v-text-field
+                                label="Email"
+                                prepend-icon="person"
+                                type="email"
+                                >
+                            </v-text-field>
+                            <v-text-field
+                                label="Username"
+                                prepend-icon="lock"
+                                type="password"
+                                >
+                            </v-text-field>
+                        </v-form>
+                    </v-card-text>
+                    <v-card-actions
+                        class="justify-center"
+                        >
+                        <v-btn 
+                            dark
+                            color="primary">
+                            LOGIN
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
+</template>
+<script>
+export default {
+    name: 'SignIn'
+}
+</script>
