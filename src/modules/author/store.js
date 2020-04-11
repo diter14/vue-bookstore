@@ -1,4 +1,9 @@
 import AuthorServices from './services'
+import { httpClient } from '@/plugins/axios'
+
+const token = localStorage.getItem('token')
+
+httpClient.defaults.headers.common['authorization'] = token
 
 export const AuthorStore = {
     namespaced: true,

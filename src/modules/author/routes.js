@@ -1,17 +1,18 @@
-
+import AuthorHomePage from './pages/AuthorHome'
 
 export const AuthorRoutes = [
     {
-        path: '/author',
-        children: [
-            {
-                path: '/',
-                // component: AuthorHomePage
-            },
-            {
-                path: '/:id',
-                // component: AuthorSinglePage
-            },
-        ]
+        path: '/authors',
+        component: AuthorHomePage
+        // children: [
+        //     {
+        //         path: '/',
+        //         component: AuthorHomePage
+        //     },
+        //     {
+        //         path: '/:id',
+        //         // component: AuthorSinglePage
+        //     },
+        // ]
     }
 ]
