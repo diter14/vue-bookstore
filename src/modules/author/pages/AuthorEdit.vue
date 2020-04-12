@@ -2,10 +2,10 @@
     <main>
         <v-row>
             <v-col cols="12">
-                <h2 class="font-weight-black">Create Author</h2>
+                <h2 class="font-weight-black">Edit Author</h2>
             </v-col>
         </v-row>
-        <v-form ref="author_form" @submit.prevent="create()">
+        <v-form ref="author_form" @submit.prevent="update()">
             <v-row>
                 <v-col md="4" offset-md="2">
                     <v-text-field 
@@ -27,7 +27,7 @@
                         type="submit"
                         class="blue-grey darken-2"
                         >
-                        CREATE
+                        UPDATE
                     </v-btn>
                 </v-col>
             </v-row>
@@ -46,31 +46,40 @@
 </template>
 <script>
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-    name: 'AuthorCreate',
+    name: 'AuthorEdit',
     data() {
         return {
-            author: {
-                name: '',
-                country: ''
-            },
+            // author: {
+            //     name: '',
+            //     country: ''
+            // },
             snackbar: {
                 open: false,
-                message: 'Author created successfully'
+                message: 'Author updated successfully'
             }
         }
     },
+
+    created() {
+        this.getAuthor(this.$route.params.id)
+    },
+
+    computed: {
+        ...mapGetters('author', ['author'])
+    },
+
     methods: {
         ...mapActions('author',[
-            'createAuthor'
+            'getAuthor',
+            'updateAuthor'
         ]),
 
-        create() {
-            this.createAuthor(this.author)
+        update() {
+            this.updateAuthor({ id: this.$route.params.id, author: this.author})
             this.snackbar.open = true
-            // this.$ref.author_form.reset()
         }
     }
 }

@@ -12,10 +12,10 @@
                         <v-toolbar
                             dark
                             flat
-                            color="primary"
+                            color="blue-grey darken-2"
                             >
                             <v-toolbar-title>
-                                Book Store
+                                SIGN IN
                             </v-toolbar-title>
                         </v-toolbar>
                         <v-card-text>
@@ -42,7 +42,7 @@
                             <v-btn 
                                 dark
                                 type="submit"
-                                color="primary">
+                                color="blue-grey darken-2">
                                 LOGIN
                             </v-btn>
                         </v-card-actions>

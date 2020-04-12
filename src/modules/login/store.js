@@ -1,20 +1,23 @@
 import LoginServices from './services'
 
-export const SET_TOKEN = 'login/SET_TOKEN'
+const SET_TOKEN = 'login/SET_TOKEN'
 
 export const LoginStore = {
     namespaced: true,
     state: {
         token: ''
     },
+    getters: {
+        isUserConnected: state => state.token != ''
+    },
     actions: {
-        signIn: async ({ commit }, payload) => {
-            const res = await LoginServices.signIn(payload)
+        signIn: async ({ commit }, user) => {
+            const res = await LoginServices.signIn(user)
             const token = res.data.token
             commit(SET_TOKEN, token)
         },
-        signUp: async ({ commit }, payload) => {
-            const res = await LoginServices.signUp(payload)
+        signUp: async ({ commit }, user) => {
+            const res = await LoginServices.signUp(user)
             const token = res.data.token
             commit(SET_TOKEN, token)
         },

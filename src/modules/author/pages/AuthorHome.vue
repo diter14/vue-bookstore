@@ -6,18 +6,25 @@
             </v-col>
             <v-col cols="4" class="d-flex align-center justify-end">
                 <v-btn
-                    class="blue-grey darken-4"
                     dark
                     to="/authors/create"
+                    class="blue-grey darken-2"
                     >
-                    <v-icon dark left>mdi-plus</v-icon> &nbsp; Author
+                    <v-icon dark left>mdi-plus</v-icon> 
+                    &nbsp; Author
                 </v-btn>
             </v-col>
         </v-row>
+        <v-spacer/>
+        <author-list/>
     </main>
 </template>
 <script>
+import AuthorList from '../components/AuthorList'
 export default {
-    name: 'AuthorHome'
+    name: 'AuthorHome',
+    components: {
+        AuthorList
+    }
 }
 </script>

@@ -7,6 +7,7 @@ import { AuthorStore } from '@/modules/author/store'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+    // strict: true,
     modules: {
         login: LoginStore,
         author: AuthorStore,

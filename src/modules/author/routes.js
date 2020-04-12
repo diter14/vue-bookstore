@@ -1,29 +1,31 @@
 import AuthorHomePage from './pages/AuthorHome'
 import AuthorCreatePage from './pages/AuthorCreate'
+import AuthorEditPage from './pages/AuthorEdit'
 
-// const AuthorEditPage = { template: '<div>Edit Page</div>' }
 
 export const AuthorRoutes = [
     {
         path: '/authors',
+        name: 'author_home',
         component: AuthorHomePage,
-        // children: [
-            // {
-            //     path: 'create',
-            //     component: AuthorCreatePage
-            // },
-            // {
-            //     path: 'edit',
-            //     component: AuthorEditPage
-            // },
-        //     {
-        //         path: '/:id',
-        //         // component: AuthorSinglePage
-        //     },
-        // ]
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         path: '/authors/create',
-        component: AuthorCreatePage
+        name: 'author_create',
+        component: AuthorCreatePage,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/authors/:id/edit',
+        name: 'author_edit',
+        component: AuthorEditPage,
+        meta: {
+            requiresAuth: true
+        }
     },
 ]
